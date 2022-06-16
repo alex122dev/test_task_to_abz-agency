@@ -1,0 +1,117 @@
+.getblock {
+    padding-top: 140px;
+    padding-bottom: 70px;
+
+    // .getblock__container
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    // .getblock__title
+    &__title {
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 35.5px;
+
+        @media (max-width: 900px) {
+            margin-bottom: 42px; // 50 - 8 = 42
+        }
+    }
+
+    // .getblock__users
+    &__users {
+        display: flex;
+        flex-wrap: wrap;
+
+        margin: 0 -14.5px;
+        margin-bottom: 35.5px; // 50 - 14.5 = 35.5
+
+        @media (max-width: 900px) {
+            margin-left: -8px;
+            margin-right: -8px;
+            margin-bottom: 42px; // 50 - 8 = 42
+        }
+
+        @media (max-width: 560px) {
+            align-self: stretch; //* for normal text-overflow working
+        }
+    }
+}
+
+.user {
+    flex: 0 1 33.333%;
+    padding: 14.5px;
+    min-width: 0; //* for normal text-overflow working
+
+    cursor: pointer;
+
+    @media (max-width: 900px) {
+        flex: 0 1 50%;
+        padding: 8px;
+    }
+
+    @media (max-width: 560px) {
+        flex: 0 1 calc(100%);
+    }
+
+    // .user__body
+    &__body {
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        line-height: math.div(26, 16);
+        transition: all 0.3s ease 0s;
+
+        &>* {
+            text-align: center;
+            //align-self: stretch; //* for normal text-overflow working if we use display: flex for user__body
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            }
+        }
+    }
+
+    // .user__photo
+    &__photo {
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+        position: relative;
+
+        margin: 0 auto;
+        margin-bottom: 20px;
+
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+        }
+    }
+
+    // .user__name
+    &__name {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    // .user__position
+    &__position {}
+
+    // .user__email
+    &__email {}
+
+    // .user__phone
+    &__phone {}
+}

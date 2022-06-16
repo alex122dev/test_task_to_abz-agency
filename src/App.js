@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
+import { GetBlock } from './component/GetBlock/GetBlock';
+import { Header } from './component/Header/Header';
+import { MainBanner } from './component/MainBanner/MainBanner';
+import { PostBlock } from './component/PostBlock/PostBlock';
+import { useDispatch } from "react-redux";
+import './styles/style.scss'
+import { getNewToken } from './redux/users-reducer';
 
 function App() {
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getNewToken())
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <Header />
+      <MainBanner />
+      <GetBlock />
+      <PostBlock />
     </div>
   );
 }

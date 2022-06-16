@@ -1,0 +1,19 @@
+.header {
+    background-color: #fff;
+
+    // .header__container
+    &__container {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    // .header__logo
+    &__logo {}
+}
+
+.header-buttons {
+    display: flex;
+    column-gap: 10px;
+}
