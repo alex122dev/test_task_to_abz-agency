@@ -101,7 +101,7 @@ export const RegisterForm = () => {
                 </div>
                 {values.photo && <PreviewPhoto file={values.photo} />}
 
-                <Button type="submit" className="btn postform__send-btn" text='Sign up' disabled={!isValid} />
+                <Button type="submit" className="btn postform__send-btn" text='Sign up' />
             </Form>
         )}
     </Formik >
