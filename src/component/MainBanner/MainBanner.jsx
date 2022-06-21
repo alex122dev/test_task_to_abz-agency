@@ -1,4 +1,5 @@
 import bannerImage from '../../assets/main-banner.jpeg'
+import bannerImageMobile from '../../assets/main-banner x780.jpg'
 import { Button } from '../common/Button/Button'
 
 export const MainBanner = () => {
@@ -6,7 +7,11 @@ export const MainBanner = () => {
         <div className="mainbanner__container container">
             <div className="mainbanner__body">
                 <div className="mainbanner__image" >
-                    <img src={bannerImage} alt="banner" />
+                    <picture>
+                        <source srcSet={bannerImage} media="(min-width: 769px)" />
+                        <source srcSet={bannerImageMobile} media="(max-width: 768px)" />
+                        <img src={bannerImageMobile} alt="banner" />
+                    </picture>
                 </div>
                 <div className="mainbanner__content">
                     <h2 className="mainbanner__title">Test assignment for front-end developer</h2>
